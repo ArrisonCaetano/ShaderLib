@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c12b8njheikw7"]
+[gd_scene load_steps=31 format=3 uid="uid://c12b8njheikw7"]
 
 [ext_resource type="Shader" uid="uid://dol07a48n8m07" path="res://Shaders/CanvasItemVertexManipulation/WiggleSprite.gdshader" id="1_tr2i4"]
 [ext_resource type="Texture2D" uid="uid://bydvi6m80if8s" path="res://Sprites/spaceship35pu.png" id="2_tr2i4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://42af1xogjrsb" path="res://Shaders/SpriteColorsManipulation/Outline.gdshader" id="7_0iob3"]
 [ext_resource type="Shader" uid="uid://bsh3shltkn1dd" path="res://Shaders/SpriteColorsManipulation/Freeze.gdshader" id="8_4b75m"]
 [ext_resource type="Shader" uid="uid://bsdaibb01g55i" path="res://Shaders/SpriteColorsManipulation/HUE.gdshader" id="9_8ju71"]
+[ext_resource type="Shader" uid="uid://ytj3afje8vqk" path="res://Shaders/SpriteColorsManipulation/Tint.gdshader" id="10_xb4mg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nhkr4"]
 shader = ExtResource("1_tr2i4")
@@ -84,9 +85,18 @@ shader_parameter/hue_shift = 0.405
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6t1o7"]
 load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6t1o7"]
+shader = ExtResource("10_xb4mg")
+shader_parameter/tex = ExtResource("2_tr2i4")
+shader_parameter/tintcolor = Color(0.8, 0.4, 0.2, 1)
+shader_parameter/mixamount = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5qxwa"]
+load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qxria"]
 shader = ExtResource("4_7rqgy")
-shader_parameter/radius_1 = 0.353
+shader_parameter/radius_1 = 0.406
 shader_parameter/pulse_range = 0.012
 shader_parameter/pulse_speed = 20.0
 shader_parameter/softness_1 = 0.2
@@ -146,11 +156,17 @@ position = Vector2(634, 40)
 scale = Vector2(0.146485, 0.146485)
 texture = SubResource("CompressedTexture2D_xb4mg")
 
-[node name="Freeze2" type="Sprite2D" parent="."]
+[node name="HUE" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xb4mg")
 position = Vector2(736, 40)
 scale = Vector2(0.146485, 0.146485)
 texture = SubResource("CompressedTexture2D_6t1o7")
+
+[node name="HUE2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6t1o7")
+position = Vector2(850, 40)
+scale = Vector2(0.146485, 0.146485)
+texture = SubResource("CompressedTexture2D_5qxwa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qxria")
