@@ -12,3 +12,7 @@ config_version=5
 
 config/name="ShaderLib"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0417722, 0.0312161, 0.0999834, 1)
