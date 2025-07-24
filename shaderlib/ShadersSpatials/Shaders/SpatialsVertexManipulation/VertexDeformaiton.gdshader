@@ -1,42 +1,42 @@
 shader_type spatial;
 render_mode unshaded;
 
-// Controla a frequência das ondas
+// Controls the frequency of the waves
 uniform float amount : hint_range(0.0, 100.0, 0.01) = 20.0;
 
-// Controla a intensidade geral da distorção
+// Controls the overall distortion intensity
 uniform float move = 1.0;
 
-// Altura base das faixas senoidais
+// Base height of the sinusoidal bands
 uniform float bandsize = 0.1;
 
-// Velocidade de movimento das ondas
+// Speed of wave movement
 uniform float speed = 1.0;
 
 void vertex() {
-    // Centraliza UV para criar efeito simétrico
+    // Center UV to create symmetrical effect
     vec2 uv = UV - 0.5;
 
-    // Adiciona movimento com o tempo
+    // Adds movement with time
     uv.y += TIME * speed;
 
-    // Calcula valor senoidal animado
+    // Calculates animated sinusoidal value
     float wave = sin(uv.y * amount) + bandsize;
 
-    // Aplica distorção ao longo da normal da esfera
+    // Applies distortion along the sphere normal
     VERTEX += NORMAL * wave * move;
 }
 
 void fragment() {
-    // Centraliza UV para manter padrão igual ao vertex shader
+    // Center UV to keep the same pattern as vertex shader
     vec2 uv = UV - 0.5;
 
-    // Anima as ondas no eixo Y
+    // Animates the waves on the Y axis
     uv.y += TIME * speed;
 
-    // Cria a mesma função senoidal para desenhar o padrão
+    // Creates the same sinusoidal function to draw the pattern
     float wave = sin(uv.y * amount) + bandsize;
 
-    // Define a cor da faixa com base no valor senoidal
+    // Sets the band color based on the sinusoidal value
     ALBEDO = vec3(wave);
 }
