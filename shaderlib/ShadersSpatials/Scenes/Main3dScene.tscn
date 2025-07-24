@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmj1a0aqq58ry"]
+
+[ext_resource type="Shader" uid="uid://pdpoqqbvxikt" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/Rotator.gdshader" id="1_5fkc3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_20epm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fkc3"]
+render_priority = 0
+shader = ExtResource("1_5fkc3")
+shader_parameter/x = 0.0
+shader_parameter/y = 0.0
+shader_parameter/z = 0.0
+
+[node name="Main3dScene" type="Node3D"]
+
+[node name="CubeRotator" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_20epm")
+surface_material_override/0 = SubResource("ShaderMaterial_5fkc3")
