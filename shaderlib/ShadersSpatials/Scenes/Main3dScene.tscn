@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmj1a0aqq58ry"]
 
-[ext_resource type="Shader" uid="uid://pdpoqqbvxikt" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/Rotator.gdshader" id="1_5fkc3"]
-[ext_resource type="Shader" uid="uid://bj5lfwg3uxrih" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/VertexDeformaiton.gdshader" id="2_8aj82"]
+[ext_resource type="Shader" uid="uid://pdpoqqbvxikt" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/Rotator.gdshader" id="1_fopju"]
+[ext_resource type="Shader" uid="uid://bj5lfwg3uxrih" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/VertexDeformaiton.gdshader" id="2_nxdse"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_20epm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fkc3"]
 render_priority = 0
-shader = ExtResource("1_5fkc3")
+shader = ExtResource("1_fopju")
 shader_parameter/x = 0.0
 shader_parameter/y = 0.0
 shader_parameter/z = 0.0
@@ -16,7 +16,7 @@ shader_parameter/z = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sg2fc"]
 render_priority = 0
-shader = ExtResource("2_8aj82")
+shader = ExtResource("2_nxdse")
 shader_parameter/amount = 28.49
 shader_parameter/move = 0.055
 shader_parameter/bandsize = -0.135
