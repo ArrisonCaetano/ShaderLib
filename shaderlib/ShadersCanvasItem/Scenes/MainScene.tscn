@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://c12b8njheikw7"]
+[gd_scene load_steps=34 format=3 uid="uid://c12b8njheikw7"]
 
 [ext_resource type="Shader" uid="uid://dol07a48n8m07" path="res://ShadersCanvasItem/Shaders/CanvasItemVertexManipulation/WiggleSprite.gdshader" id="1_el200"]
-[ext_resource type="Texture2D" uid="uid://bydvi6m80if8s" path="res://ShadersCanvasItem/Sprites/spaceship35pu.png" id="2_6tm4w"]
+[ext_resource type="Texture2D" uid="uid://bydvi6m80if8s" path="res://ShadersCanvasItem/Sprites/spaceship.png" id="2_6tm4w"]
 [ext_resource type="Shader" uid="uid://b7423a3batp24" path="res://ShadersCanvasItem/Shaders/SpriteColorsManipulation/InvertSpriteColors.gdshader" id="3_5hoxo"]
+[ext_resource type="Shader" uid="uid://cv7wuuwyd3l7n" path="res://ShadersCanvasItem/Shaders/Rotator2d.gdshader" id="3_6tm4w"]
 [ext_resource type="Shader" uid="uid://upk7x2igv1j" path="res://ShadersCanvasItem/Shaders/SpriteColorsManipulation/PulseLinesVertical.gdshader" id="4_hxt0h"]
 [ext_resource type="Shader" uid="uid://snjduoivooyn" path="res://ShadersCanvasItem/Shaders/SpriteColorsManipulation/Pulse.gdshader" id="5_efuxt"]
 [ext_resource type="Shader" uid="uid://cjfrwc2nobv4x" path="res://ShadersCanvasItem/Shaders/SpriteColorsManipulation/CromaticAberrationSprite.gdshader" id="6_12te4"]
@@ -17,6 +18,13 @@
 shader = ExtResource("1_el200")
 shader_parameter/speed = 1.5
 shader_parameter/amplitude = 100.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hoxo"]
+shader = ExtResource("3_6tm4w")
+shader_parameter/tex = ExtResource("2_6tm4w")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hxt0h"]
+load_path = "res://.godot/imported/spaceship.png-035b4b9a1dab3458b5da43643225d225.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4jh7"]
 shader = ExtResource("3_5hoxo")
@@ -116,9 +124,15 @@ shader_parameter/invertcolors = false
 
 [node name="Wiggle" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nhkr4")
-position = Vector2(38, 38)
+position = Vector2(120, 127)
 scale = Vector2(0.146485, 0.146485)
 texture = ExtResource("2_6tm4w")
+
+[node name="Wiggle2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5hoxo")
+position = Vector2(238, 127)
+scale = Vector2(0.146485, 0.146485)
+texture = SubResource("CompressedTexture2D_hxt0h")
 
 [node name="InverSpriteColors" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_y4jh7")
