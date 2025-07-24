@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c12b8njheikw7"]
+[gd_scene load_steps=36 format=3 uid="uid://c12b8njheikw7"]
 
 [ext_resource type="Shader" uid="uid://dol07a48n8m07" path="res://ShadersCanvasItem/Shaders/CanvasItemVertexManipulation/WiggleSprite.gdshader" id="1_el200"]
 [ext_resource type="Texture2D" uid="uid://bydvi6m80if8s" path="res://ShadersCanvasItem/Sprites/spaceship.png" id="2_6tm4w"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://ytj3afje8vqk" path="res://ShadersCanvasItem/Shaders/SpriteColorsManipulation/Tint.gdshader" id="10_gtcw3"]
 [ext_resource type="Shader" uid="uid://dyyffwjrb4qy0" path="res://ShadersCanvasItem/Shaders/Shapes/EnergyBall.gdshader" id="11_cgltx"]
 [ext_resource type="Shader" uid="uid://cqfhojii6o0rg" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/InvertColors.gdshader" id="12_vf2l0"]
+[ext_resource type="Shader" uid="uid://du4l2o0aibefm" path="res://ShadersCanvasItem/Shaders/Shapes/Waves.gdshader" id="13_5hoxo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nhkr4"]
 shader = ExtResource("1_el200")
@@ -116,6 +117,16 @@ shader_parameter/radius_2 = 0.153
 shader_parameter/softness_2 = 0.023
 shader_parameter/color_2 = Color(0.94, 0.905, 0.8, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxt0h"]
+shader = ExtResource("13_5hoxo")
+shader_parameter/cutoff = 0.545
+shader_parameter/wave_size = 0.129
+shader_parameter/wave_frequency = 0.017
+shader_parameter/wave_speed = 9.695
+shader_parameter/wave_foam_size = 0.03
+shader_parameter/foam_color = Color(0.908684, 0.578981, 1, 1)
+shader_parameter/main_color = Color(0.559954, 0.00274461, 0.840961, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7rqgy"]
 shader = ExtResource("12_vf2l0")
 shader_parameter/invertcolors = false
@@ -182,12 +193,19 @@ position = Vector2(850, 40)
 scale = Vector2(0.146485, 0.146485)
 texture = SubResource("CompressedTexture2D_5qxwa")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="EnergyBall" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qxria")
-offset_left = 9.0
-offset_top = 110.0
-offset_right = 49.0
-offset_bottom = 150.0
+offset_left = 88.0
+offset_top = 179.0
+offset_right = 128.0
+offset_bottom = 219.0
+
+[node name="EnergyBall2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hxt0h")
+offset_left = 151.0
+offset_top = 179.0
+offset_right = 191.0
+offset_bottom = 219.0
 
 [node name="SCREENTEXTURE" type="Node" parent="."]
 
