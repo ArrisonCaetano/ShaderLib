@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmj1a0aqq58ry"]
+[gd_scene load_steps=7 format=3 uid="uid://dmj1a0aqq58ry"]
 
 [ext_resource type="Shader" uid="uid://pdpoqqbvxikt" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/Rotator.gdshader" id="1_5fkc3"]
+[ext_resource type="Shader" uid="uid://bj5lfwg3uxrih" path="res://ShadersSpatials/Shaders/SpatialsVertexManipulation/VertexDeformaiton.gdshader" id="2_8aj82"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_20epm"]
 
@@ -11,8 +12,24 @@ shader_parameter/x = 0.0
 shader_parameter/y = 0.0
 shader_parameter/z = 0.0
 
+[sub_resource type="SphereMesh" id="SphereMesh_8aj82"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sg2fc"]
+render_priority = 0
+shader = ExtResource("2_8aj82")
+shader_parameter/amount = 28.49
+shader_parameter/move = 0.055
+shader_parameter/bandsize = -0.135
+shader_parameter/speed = 0.5
+
 [node name="Main3dScene" type="Node3D"]
 
 [node name="CubeRotator" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_20epm")
 surface_material_override/0 = SubResource("ShaderMaterial_5fkc3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.403, 0, 0, 0, 1.403, 0, 0, 0, 1.403, -0.459934, 0, -4.08459)
+mesh = SubResource("SphereMesh_8aj82")
+skeleton = NodePath("../CubeRotator")
+surface_material_override/0 = SubResource("ShaderMaterial_sg2fc")
