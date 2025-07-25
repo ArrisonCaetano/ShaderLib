@@ -1,6 +1,6 @@
 # 🎨 Godot Shader Collection
 
-A simple repository for storing and organizing custom shaders for 2D projects using the Godot Engine.
+A simple repository for storing and organizing custom shaders for 2D and 3D projects using the Godot Engine.
 
 This collection includes reusable effects such as glow, glitch, hue shift, RGB split, pulse, and more.
 
