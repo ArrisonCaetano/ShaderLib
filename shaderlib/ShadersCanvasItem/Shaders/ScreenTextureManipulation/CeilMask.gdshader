@@ -14,6 +14,10 @@ void fragment() {
 
     // Define uma máscara binária (0 ou 1), com base na intensidade e no controle do usuário
     float mask = ceil(tex_value - 1.0 + mask_threshold);
+	//essa linha de cima poderia ser escrita assim 
+	//if (tex_value > 1.0 - mask_threshold) {
+    	//mask = 1.0;
+	//} //porem escreve da outra forma eh muito melhor já que evita if
 
     // Mostra branco onde a máscara é 1, preto onde é 0
     COLOR = vec4(vec3(mask), 1.0);
