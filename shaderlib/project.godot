@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="ShaderLib"
+run/main_scene="uid://c12b8njheikw7"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[display]
+
+window/size/always_on_top=true
 
 [rendering]
 

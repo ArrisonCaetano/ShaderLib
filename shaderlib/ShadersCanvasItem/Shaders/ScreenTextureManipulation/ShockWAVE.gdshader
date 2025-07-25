@@ -5,7 +5,7 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear;
 
 // Controla inversão: 1 = ativado, 0 = desativado para evitar boleans
 uniform int invertcolors : hint_range(0, 1);
-
+uniform float intensity;
 
 void fragment() {
 

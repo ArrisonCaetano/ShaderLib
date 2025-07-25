@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c12b8njheikw7"]
+[gd_scene load_steps=54 format=3 uid="uid://c12b8njheikw7"]
 
 [ext_resource type="Shader" uid="uid://dol07a48n8m07" path="res://ShadersCanvasItem/Shaders/CanvasItemVertexManipulation/WiggleSprite.gdshader" id="1_6cn0j"]
 [ext_resource type="Texture2D" uid="uid://bydvi6m80if8s" path="res://ShadersCanvasItem/Sprites/spaceship.png" id="2_pa83i"]
@@ -17,9 +17,16 @@
 [ext_resource type="Shader" uid="uid://cqfhojii6o0rg" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/InvertColors.gdshader" id="14_al1lu"]
 [ext_resource type="Texture2D" uid="uid://bdhv11l3sxqbn" path="res://ShadersCanvasItem/Sprites/starts_mask.png" id="14_o1k64"]
 [ext_resource type="Shader" uid="uid://dti6cnl62140i" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/ScreenWave.gdshader" id="16_vexm6"]
+[ext_resource type="Shader" uid="uid://bwkpct0ddwgud" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/ShockWAVE.gdshader" id="18_w0t48"]
 [ext_resource type="Shader" uid="uid://dc0k1au28ts2w" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Pixalization.gdshader" id="19_a8toa"]
 [ext_resource type="Shader" uid="uid://576kv1m31y5r" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Bounce.gdshader" id="19_l6kxm"]
 [ext_resource type="Shader" uid="uid://e51dgk8hnayv" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Shake.gdshader" id="20_l6kxm"]
+[ext_resource type="Shader" uid="uid://d3q8vkiws1gli" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Vignette.gdshader" id="22_padnu"]
+[ext_resource type="Shader" uid="uid://5pmaofsjjuc3" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Noise.gdshader" id="23_yg5y1"]
+[ext_resource type="Shader" uid="uid://tkwdvnk5tdlc" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Spiral.gdshader" id="24_tx32k"]
+[ext_resource type="Shader" uid="uid://dqfusmasaloyg" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Fract.gdshader" id="25_nvmte"]
+[ext_resource type="Shader" uid="uid://ft02ls4uwml0" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Glitch.gdshader" id="26_ojkpq"]
+[ext_resource type="Shader" uid="uid://chict5c22bmww" path="res://ShadersCanvasItem/Shaders/ScreenTextureManipulation/Test.gdshader" id="27_al1lu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nhkr4"]
 shader = ExtResource("1_6cn0j")
@@ -46,9 +53,6 @@ shader_parameter/speed = 2.04
 shader_parameter/width = 0.42
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f140w"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f140w"]
 shader = ExtResource("6_a8toa")
 shader_parameter/tex = ExtResource("2_pa83i")
@@ -57,18 +61,12 @@ shader_parameter/speed = 20.0
 shader_parameter/strength = 1.0
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0iob3"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0iob3"]
 shader = ExtResource("7_l6kxm")
 shader_parameter/tex = ExtResource("2_pa83i")
 shader_parameter/time = 1.0
 shader_parameter/split_amount = 0.01
 shader_parameter/glitch_speed = 10.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4b75m"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4b75m"]
 shader = ExtResource("8_1unxg")
@@ -79,9 +77,6 @@ shader_parameter/aura_strength = 3.575
 shader_parameter/pulse_speed = 10.0
 shader_parameter/aura_color = Color(1, 1, 1, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ju71"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ju71"]
 shader = ExtResource("9_padnu")
 shader_parameter/tex = ExtResource("2_pa83i")
@@ -89,25 +84,16 @@ shader_parameter/time = 0.0
 shader_parameter/freeze_intensity = 1.0
 shader_parameter/shimmer_rate = 1.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xb4mg"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xb4mg"]
 shader = ExtResource("10_yg5y1")
 shader_parameter/tex = ExtResource("2_pa83i")
 shader_parameter/hue_shift = 0.405
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6t1o7"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6t1o7"]
 shader = ExtResource("11_tx32k")
 shader_parameter/tex = ExtResource("2_pa83i")
 shader_parameter/tintcolor = Color(0.8, 0.4, 0.2, 1)
 shader_parameter/mixamount = 1.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5qxwa"]
-load_path = "res://.godot/imported/spaceship35pu.png-e7de7ca3697368242d5417d12f9c2872.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qxria"]
 shader = ExtResource("12_nvmte")
@@ -123,11 +109,6 @@ shader_parameter/radius_2 = 0.153
 shader_parameter/softness_2 = 0.023
 shader_parameter/color_2 = Color(0.94, 0.905, 0.8, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0t48"]
-shader = ExtResource("13_vexm6")
-shader_parameter/mask_texture = ExtResource("14_o1k64")
-shader_parameter/mask_threshold = 0.52
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxt0h"]
 shader = ExtResource("13_ojkpq")
 shader_parameter/cutoff = 0.545
@@ -137,6 +118,11 @@ shader_parameter/wave_speed = 9.695
 shader_parameter/wave_foam_size = 0.03
 shader_parameter/foam_color = Color(0.908684, 0.578981, 1, 1)
 shader_parameter/main_color = Color(0.559954, 0.00274461, 0.840961, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0t48"]
+shader = ExtResource("13_vexm6")
+shader_parameter/mask_texture = ExtResource("14_o1k64")
+shader_parameter/mask_threshold = 0.52
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7rqgy"]
 shader = ExtResource("14_al1lu")
@@ -149,12 +135,12 @@ shader_parameter/invertcolors = 0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8toa"]
 shader = ExtResource("19_a8toa")
 shader_parameter/invertcolors = 1
-shader_parameter/amount = 0.001
+shader_parameter/amount = 0.006
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l6kxm"]
-shader = ExtResource("19_l6kxm")
+shader = ExtResource("18_w0t48")
 shader_parameter/invertcolors = 0
-shader_parameter/intensity = 0.0
+shader_parameter/intensity = 2.34
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1unxg"]
 shader = ExtResource("19_l6kxm")
@@ -164,7 +150,32 @@ shader_parameter/intensity = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_padnu"]
 shader = ExtResource("20_l6kxm")
 shader_parameter/invertcolors = 0
-shader_parameter/intensity = 0.0
+shader_parameter/intensity = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yg5y1"]
+shader = ExtResource("22_padnu")
+shader_parameter/power = 0.315
+shader_parameter/radius = 0.835
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tx32k"]
+shader = ExtResource("23_yg5y1")
+shader_parameter/time = 0.815
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvmte"]
+shader = ExtResource("24_tx32k")
+shader_parameter/strength = 6.285
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojkpq"]
+shader = ExtResource("25_nvmte")
+shader_parameter/amount = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al1lu"]
+shader = ExtResource("26_ojkpq")
+shader_parameter/glitch_strength = 0.263
+shader_parameter/glitch_speed = 5.921
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5n0r"]
+shader = ExtResource("27_al1lu")
 
 [node name="Node2D" type="Node2D"]
 
@@ -190,43 +201,43 @@ texture = ExtResource("2_pa83i")
 material = SubResource("ShaderMaterial_q68mp")
 position = Vector2(229.5, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_f140w")
+texture = ExtResource("2_pa83i")
 
 [node name="Pulse" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_f140w")
 position = Vector2(330.5, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_0iob3")
+texture = ExtResource("2_pa83i")
 
 [node name="CromaticAb" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0iob3")
 position = Vector2(444.5, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_4b75m")
+texture = ExtResource("2_pa83i")
 
 [node name="Outline" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_4b75m")
 position = Vector2(541.5, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_8ju71")
+texture = ExtResource("2_pa83i")
 
 [node name="Freeze" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_8ju71")
 position = Vector2(634, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_xb4mg")
+texture = ExtResource("2_pa83i")
 
 [node name="HUE" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xb4mg")
 position = Vector2(736, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_6t1o7")
+texture = ExtResource("2_pa83i")
 
-[node name="HUE2" type="Sprite2D" parent="."]
+[node name="Tint" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_6t1o7")
 position = Vector2(850, 40)
 scale = Vector2(0.146485, 0.146485)
-texture = SubResource("CompressedTexture2D_5qxwa")
+texture = ExtResource("2_pa83i")
 
 [node name="EnergyBall" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qxria")
@@ -235,6 +246,13 @@ offset_top = 179.0
 offset_right = 128.0
 offset_bottom = 219.0
 
+[node name="Wave" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hxt0h")
+offset_left = 143.0
+offset_top = 181.0
+offset_right = 183.0
+offset_bottom = 221.0
+
 [node name="CeilMask" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_w0t48")
 offset_left = 199.0
@@ -242,13 +260,6 @@ offset_top = 185.0
 offset_right = 239.0
 offset_bottom = 225.0
 color = Color(0, 0, 0, 1)
-
-[node name="Wave" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_hxt0h")
-offset_left = 143.0
-offset_top = 181.0
-offset_right = 183.0
-offset_bottom = 221.0
 
 [node name="SCREENTEXTURE" type="Node" parent="."]
 
@@ -314,7 +325,79 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Shake" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
 material = SubResource("ShaderMaterial_padnu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vignette" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
+material = SubResource("ShaderMaterial_yg5y1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Noise" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
+material = SubResource("ShaderMaterial_tx32k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spiral" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
+material = SubResource("ShaderMaterial_nvmte")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fract" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
+material = SubResource("ShaderMaterial_ojkpq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Glitch" type="ColorRect" parent="SCREENTEXTURE"]
+visible = false
+material = SubResource("ShaderMaterial_al1lu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="teste" type="ColorRect" parent="SCREENTEXTURE"]
+material = SubResource("ShaderMaterial_d5n0r")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

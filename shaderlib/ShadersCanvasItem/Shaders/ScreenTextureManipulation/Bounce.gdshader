@@ -10,10 +10,10 @@ uniform float intensity;
 void fragment() {
 
 	vec2 uv = SCREEN_UV;
-	
+
 	vec2 center = vec2(0.5);
 	vec2 dir = uv - center;
-	uv -= dir * intensity * sin(TIME * 2.0);
+	uv -= dir * 0.05 * sin(TIME * 2.0);
     // Pega a cor da tela na posição atual
     vec4 screen_color = texture(SCREEN_TEXTURE, uv);
 
